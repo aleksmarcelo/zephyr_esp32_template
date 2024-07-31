@@ -1,0 +1,27 @@
+/delete-node/ &storage_partition;
+
+&flash0 {
+  partitions {
+    /* Set 3KB of storage at the end of 128KB flash */
+    storage_partition: partition@1f400 {
+      label = "storage";
+      reg = <0x0001f400 DT_SIZE_K(3)>;
+    };
+  };
+};
+
+/ {
+
+
+  aliases {
+    button12 = &button0;
+  };    
+
+
+  button12: button0 {
+    label = "Push button switch under buttons node";
+    gpios = <&gpio0 13 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+    debounce-interval = <0>;
+  };
+  
+};

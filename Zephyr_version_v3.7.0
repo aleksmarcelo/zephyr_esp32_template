@@ -1,0 +1,6 @@
+Placeholder file just to explicitly show we are working on Zephyr version 3.7.0
+
+```
+cd $ZEPHYR_BASE
+git checkout v3.7.0
+```

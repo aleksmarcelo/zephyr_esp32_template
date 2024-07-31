@@ -1,0 +1,32 @@
+/ {
+
+  gpio_keys {
+    /* Push button switch 0 KEY1 */
+    compatible = "gpio-keys";
+    mypinir: my_pin_ir {
+      gpios = <&gpio0 3 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+      label = "pin InfraRed";
+      status = "okay";
+    };
+  };
+
+  sw42: sw3 {
+    label = "Push button switch under buttons node";
+    gpios = <&gpio0 15 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+    // debounce-interval = <20>;
+  };
+
+
+};
+
+&flash0 {
+  partitions {
+    compatible = "fixed-partitions";
+    #address-cells = <1>;
+    #size-cells = <1>;
+    storage_partition: partition@3e000 {
+      label = "storage";
+      reg = <0x0003e000 0x00002000>;
+    };
+  };
+};
