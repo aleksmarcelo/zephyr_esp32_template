@@ -16,10 +16,15 @@ west update
 west blobs fetch hal_espressif
 ```
 
-#### Compiling and Flashing
+#### Compiling
 
 ```sh
 west build -b esp32_devkitc_wroom/esp32/procpu -pauto
+```
+
+#### Flashing
+```sh
+west flash
 ```
 
 #### Monitoring

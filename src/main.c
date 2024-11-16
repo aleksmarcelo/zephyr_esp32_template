@@ -8,7 +8,6 @@
 #include <zephyr/drivers/gpio.h>
 #include <zephyr/kernel.h>
 #include <zephyr/logging/log.h>
-#include "secrets.h"
 
 LOG_MODULE_REGISTER(main);
 
